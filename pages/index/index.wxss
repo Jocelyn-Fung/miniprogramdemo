@@ -1,0 +1,14 @@
+/**index.wxss**/
+.nav{
+  display: flex;
+  background-color:#f0f0f0;
+}
+.item{
+  flex: 1;
+  text-align: center;
+}
+.title{
+  text-align: center;
+  padding:5px 0px;
+  background-color:aliceblue;
+}
