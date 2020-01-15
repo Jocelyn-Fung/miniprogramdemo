@@ -1,14 +1,17 @@
 /**index.wxss**/
 .nav{
+  background-color:#eb4450;
+  height:100rpx;
   display: flex;
-  background-color:#f0f0f0;
+  justify-content: center;
+  align-items: center;
 }
-.item{
-  flex: 1;
+.search{
   text-align: center;
-}
-.title{
-  text-align: center;
-  padding:5px 0px;
-  background-color:aliceblue;
+  line-height: 80rpx;
+  background-color:#FFFFFF ;
+  width:700rpx;
+  height:80rpx;
+  border-radius: 5px;
+  color:#767676 ;
 }
