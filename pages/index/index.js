@@ -4,9 +4,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    banner:[]
+    banner:[],
+    navbars:[],
+    floors:[],
+    product_list:[]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -14,14 +16,43 @@ Page({
     wx.request({
       url:'https://api.zbztb.cn/api/public/v1/home/swiperdata',
       method:'get',
-      success:function(res){
+      success:(res)=>{
         // console.log(res)
         if(res.statusCode===200){
-          this.banner=res.data.message
-          console.log(this.banner)
+          this.setData({
+            banner: res.data.message
+          })
         }
       }
-    })
+    }),
+    // 导航栏
+      wx.request({
+        url: 'https://api.zbztb.cn/api/public/v1/home/catitems',
+        method: 'get',
+        success: (res) => {
+          // console.log(res)
+          if (res.statusCode === 200) {
+            this.setData({
+              navbars: res.data.message
+            })
+          }
+        }
+      }),
+      // 楼层
+      wx.request({
+        url: 'https://api.zbztb.cn/api/public/v1/home/floordata',
+        method: 'get',
+        success: (res) => {
+          // console.log(res)
+          if (res.statusCode === 200) {
+            this.setData({
+              floors: res.data.message,
+              // product_list: res.data.message.product_list
+            })
+          }
+        }
+      })
+      
   },
 
   /**
@@ -71,5 +102,9 @@ Page({
    */
   onShareAppMessage: function () {
     
-  }
+  },
+  // handleChild(e) {
+  //   console.log(e)
+  //   console.log(e.detail,"拿到值啦！")
+  // }
 })

@@ -1,76 +1,35 @@
 <!--index.wxml-->
-<view class="nav">
+<!-- 使用组件 <view class="nav">
   <view class="search">搜索</view>
-</view>
+</view> -->
+<!-- <searchInput title="什么这么好😀！瞎"/> -->
+<!-- <searchInput bind:handle="handleChild" /> -->
 <!-- 轮播图 -->
 <swiper indicator-dots="{{true}}" autoplay="{{true}}" class="swiper">
-  <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="*this">
-    <image :src="{{item.image_src}}" mode="aspectFit"></image>
+  <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="index">
+    <image src='{{item.image_src}}' mode="scaleToFill"></image>
   </swiper-item>
-  <!-- <swiper-item class="swiper-item">
-    <image src="images/banner2.jpg" mode="aspectFit"></image>
-  </swiper-item>
-  <swiper-item class="swiper-item">
-    <image src="images/banner3.jpg" mode="aspectFit"></image>
-  </swiper-item> -->
 </swiper>
 
 <!-- 导航栏 -->
 <view class="navbar">
-  <view class="navbar-item">
-    <image src="icons/cart.png"></image>
-    <view> 分类</view>
-  </view>
-  <view class="navbar-item">
-    <image src="icons/category.png"></image>
-    <view>秒杀拍</view>
-  </view>
-  <view class="navbar-item">
-    <image src="icons/home.png"></image>
-    <view>超市购</view>
-  </view>
-  <view class="navbar-item">
-    <image src="icons/my.png"></image>
-    <view>母婴品</view>
+  <view class="navbar-item" wx:for="{{navbars}}" wx:key="index">
+    <image src="{{item.image_src}}"></image>
   </view>
 </view>
 
 <!-- 主题爆款 -->
-<view class="themes">
-  <view class="title">时尚女装</view>
+<view class="themes" wx:for="{{floors}}" wx:key="index1">
+  <view class="title">
+    <image src="{{item.floor_title.image_src}}"></image>
+  </view>
   <view class="pics">
     <view class="left">
-      <image src="icons/b5.png"></image>
+      <image src="{{item.product_list[0].image_src}}"></image>
     </view>
     <view class="right">
-      <image src="icons/b1.png"></image>
-      <image src="icons/b2.png"></image>
-      <image src="icons/b3.png"></image>
-      <image src="icons/b4.png"></image>
+      <image wx:for="{{item.product_list}}" wx:key="index" wx:for-index="i" wx:for-item="v" wx:if="{{i!==0 ? true:false}}" src="{{v.image_src}}"></image>
     </view>
   </view>
-   <view class="title">时尚女装</view>
-  <view class="pics">
-    <view class="left">
-      <image src="icons/b5.png"></image>
-    </view>
-    <view class="right">
-      <image src="icons/b1.png"></image>
-      <image src="icons/b2.png"></image>
-      <image src="icons/b3.png"></image>
-      <image src="icons/b4.png"></image>
-    </view>
-  </view>
-   <view class="title">时尚女装</view>
-  <view class="pics">
-    <view class="left">
-      <image src="icons/b5.png"></image>
-    </view>
-    <view class="right">
-      <image src="icons/b1.png"></image>
-      <image src="icons/b2.png"></image>
-      <image src="icons/b3.png"></image>
-      <image src="icons/b4.png"></image>
-    </view>
-  </view>
+
 </view>

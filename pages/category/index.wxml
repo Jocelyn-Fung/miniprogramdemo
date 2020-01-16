@@ -1,2 +1,25 @@
 <!--pages/category/index.wxml-->
 <text>pages/category/index.wxml</text>
+<view>
+  <button type="default" size="{{100}}" open-type="contact">
+    contact
+  </button>
+  <button type="default" size="{{100}}" open-type="share">
+    share
+  </button>
+  <button type="warn" size="{{100}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+    getPhoneNumber
+  </button>
+  <button type="primary" size="{{100}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+    getUserInfo
+  </button>
+  <button type="default" size="{{100}}" open-type="lauchApp">
+    lauchApp
+  </button>
+  <button type="warn" size="{{100}}" open-type="openSetting">
+    openSetting
+  </button>
+    <button type="primary" size="{{100}}" open-type="feedback">
+    feedback
+  </button>
+</view>

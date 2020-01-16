@@ -1,0 +1,7 @@
+<!--components/searchInput/searchInput.wxml-->
+<view class="nav">
+  <view class="search">
+    {{title}}
+  </view>
+</view>
+<view bindtap="handleMyTap">点我一下啊</view>

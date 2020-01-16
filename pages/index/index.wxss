@@ -1,29 +1,13 @@
 /**index.wxss**/
-.nav{
-  background-color:#eb4450;
-  height:100rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.search{
-  text-align: center;
-  line-height: 80rpx;
-  background-color:#FFFFFF ;
-  width:700rpx;
-  height:80rpx;
-  border-radius: 5px;
-  color:#767676 ;
-}
+
 
 /* 轮播图 */
 .swiper{
-  width:100%;
-  background-color:pink;
+  height:340rpx;
 }
 .swiper-item image{
   width:100%;
-  height:340rpx;
+  height:100%;
 }
 /* 导航 */
 .navbar{
@@ -39,9 +23,6 @@
   height:140rpx;
   width:128rpx;
 }
-.navbar-item view{
-  font-size: 22rpx;
-}
 /* 主题爆款 */
 /* .themes{
 
@@ -50,6 +31,10 @@
   height:59rpx;
   margin:5rpx 0rpx;
 }
+.title image{
+  height:100%;
+  width:100%;
+}
 .pics{
   display: flex;
   height:386rpx;
@@ -57,21 +42,26 @@
   box-sizing: border-box;
 }
 .left{
-  flex:30%;
+  flex:33%;
+  height:100%;
 }
 .left image{
   height:100%;
-  width:232rpx;
-   border:1px solid red;
-   border-radius: 3px;
+  width:98%;
+  border-radius: 3px;
 }
 .right{
-  flex:65%;
+  flex:67.66%;
+  display: flex;
+  flex-wrap:wrap;
 }
 .right image{
   height:188rpx;
   width:233rpx;
-  border:1px solid red;
-  margin:0rpx 5rpx;
+  margin: 6rpx;
   border-radius: 3px;
+}
+.right :nth-child(1),
+.right :nth-child(2){
+  margin-top: 0rpx;
 }
