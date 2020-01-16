@@ -2,33 +2,43 @@
 <!-- 使用组件 <view class="nav">
   <view class="search">搜索</view>
 </view> -->
-<!-- <searchInput title="什么这么好😀！瞎"/> -->
-<!-- <searchInput bind:handle="handleChild" /> -->
+<searchInput title="什么这么好😀！瞎" />
 <!-- 轮播图 -->
 <swiper indicator-dots="{{true}}" autoplay="{{true}}" class="swiper">
   <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="index">
-    <image src='{{item.image_src}}' mode="scaleToFill"></image>
+    <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+      <image src='{{item.image_src}}' mode="scaleToFill"></image>
+    </navigator>
   </swiper-item>
+
 </swiper>
 
 <!-- 导航栏 -->
 <view class="navbar">
   <view class="navbar-item" wx:for="{{navbars}}" wx:key="index">
-    <image src="{{item.image_src}}"></image>
+    <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+      <image src="{{item.image_src}}"></image>
+    </navigator>
   </view>
 </view>
 
 <!-- 主题爆款 -->
 <view class="themes" wx:for="{{floors}}" wx:key="index1">
   <view class="title">
-    <image src="{{item.floor_title.image_src}}"></image>
+    <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+      <image src="{{item.floor_title.image_src}}"></image>
+    </navigator>
   </view>
   <view class="pics">
     <view class="left">
-      <image src="{{item.product_list[0].image_src}}"></image>
+      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+        <image src="{{item.product_list[0].image_src}}"></image>
+      </navigator>
     </view>
     <view class="right">
-      <image wx:for="{{item.product_list}}" wx:key="index" wx:for-index="i" wx:for-item="v" wx:if="{{i!==0 ? true:false}}" src="{{v.image_src}}"></image>
+      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+        <image wx:for="{{item.product_list}}" wx:key="index" wx:for-index="i" wx:for-item="v" wx:if="{{i!==0 ? true:false}}" src="{{v.image_src}}"></image>
+      </navigator>
     </view>
   </view>
 

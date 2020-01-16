@@ -4,4 +4,3 @@
     {{title}}
   </view>
 </view>
-<view bindtap="handleMyTap">点我一下啊</view>
