@@ -102,7 +102,7 @@ Page({
    */
   onShareAppMessage: function () {
     
-  },
+  }
   // handleChild(e) {
   //   console.log(e)
   //   console.log(e.detail,"拿到值啦！")

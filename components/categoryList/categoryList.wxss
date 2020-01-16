@@ -1,0 +1,30 @@
+/* components/categoryList/categoryList.wxss */
+.cate-list{
+  margin-top:100rpx;
+  /* position: fixed; */
+
+}
+.title{
+  text-align: center;
+  color:#575757;
+  font-size: 26rpx;
+  padding:18rpx 0rpx;
+}
+.list{
+  display: flex;
+  justify-content: space-around;
+}
+.list-item{
+  display: flex;
+  flex-direction: column;
+  width:120rpx;
+  text-align: center;
+}
+.list image{
+  width:120rpx;
+  height:120rpx;
+}
+.list view{
+  color:#2E2E2E;
+  font-size: 21rpx;
+}

@@ -2,7 +2,7 @@
 <!-- 使用组件 <view class="nav">
   <view class="search">搜索</view>
 </view> -->
-<searchInput title="什么这么好😀！瞎" />
+<searchInput />
 <!-- 轮播图 -->
 <swiper indicator-dots="{{true}}" autoplay="{{true}}" class="swiper">
   <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="index">

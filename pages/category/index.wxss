@@ -1,1 +1,30 @@
 /* pages/category/index.wxss */
+.input{
+  width:100%;
+  position: fixed;
+   z-index: 33;
+}
+.main {
+  display: flex;
+}
+.category-list  {
+  background-color: #f3f3f3;
+  width: 182rpx;
+  font-size: 28rpx;
+  color: #585858;
+  margin-top:100rpx;
+}
+
+.category-list .list_item {
+  text-align: center;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.active {
+  border-left: 2px solid #eb4450;
+  color: #eb4450;
+}
+.content{
+  width:568rpx;
+}

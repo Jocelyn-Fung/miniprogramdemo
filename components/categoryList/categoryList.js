@@ -1,12 +1,11 @@
-// components/searchInput/searchInput.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    list:{
-      type:Object,
-      value:{}
+    title: {
+      type: String,
+      value: ''
     }
   },
 
@@ -21,5 +20,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    //   handleMyTap(){
+    //     console.log("wqw")
+    //     this.triggerEvent('handle','一样')
+    //   }
   }
 })

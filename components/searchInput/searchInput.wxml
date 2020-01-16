@@ -1,6 +1,4 @@
 <!--components/searchInput/searchInput.wxml-->
 <view class="nav">
-  <view class="search">
-    {{title}}
-  </view>
+  <view class="search">搜索</view>
 </view>

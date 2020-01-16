@@ -1,0 +1,14 @@
+<view class="category">
+  <searchInput class="input" />
+  <view class="main">
+    <view class="category-list">
+      <scroll-view scroll-y="true" style="height:1000rpx">
+        <navigator>
+          <view class="list_item" wx:for="{{category_list}}" wx:key="index">{{item.cat_name}}                </view>
+        </navigator>
+      </scroll-view>
+    </view>
+    <!-- 子组件 -->
+    <categoryList class="content" list="list"/>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+<view class="cate-list">
+  <view class="title">/ 电视 /</view>
+  <view class="list">
+    <view class="list-item" >
+      <navigator>
+        <image src="/components/categoryList/icons/cart.png"></image>
+        <text>曲面电视</text>
+      </navigator>
+    </view>
+  </view>
+</view>

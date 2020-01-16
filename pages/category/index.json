@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "categoryList":"/components/categoryList/categoryList",
+    "searchInput": "/components/searchInput/searchInput"
+  }
 }
