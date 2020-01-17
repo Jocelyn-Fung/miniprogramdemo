@@ -27,9 +27,7 @@ navigator{
   width:128rpx;
 }
 /* 主题爆款 */
-/* .themes{
 
-} */
 .title{
   height:59rpx;
   margin:5rpx 0rpx;
@@ -58,7 +56,6 @@ navigator{
   flex:67%;
   display: flex;
   flex-wrap:wrap;
-  /* margin-right:7rpx; */
 }
 .right .nav{
   height:50%;

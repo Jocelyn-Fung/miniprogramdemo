@@ -19,11 +19,14 @@
   text-align: center;
   padding-top: 20rpx;
   padding-bottom: 20rpx;
+  margin-top:10rpx;
+  margin-bottom: 10rpx;
 }
 
 .active {
   border-left: 2px solid #eb4450;
   color: #eb4450;
+
 }
 .content{
   width:568rpx;
