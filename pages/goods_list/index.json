@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "searchInput":"/components/searchInput/searchInput"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#eb4450",
+  "navigationBarTitleText": "商品列表",
+  "navigationBarTextStyle": "white",
+  "navigationBarFontSize": "18px"
 }

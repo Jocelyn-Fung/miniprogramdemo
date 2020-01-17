@@ -1,1 +1,43 @@
 /* pages/goods_list/index.wxss */
+.tab{
+  display: flex;
+  justify-content: space-around;
+}
+.tab .tab-item{
+  flex:1;
+  text-align: center;
+  padding:20rpx 0rpx;
+  margin-bottom: 10rpx;
+}
+.active{
+  border-bottom: 2px solid #eb4450;
+}
+.content navigator{
+  display: flex;
+  margin-left:41rpx;
+  margin-right:26rpx;
+}
+.leftPic{
+  flex: 200rpx;
+  background-color:pink;
+}
+.leftPic image{
+  height:191rpx;
+  width:191rpx;
+}
+.rightInfo{
+  flex:518rpx;
+  margin-left:29rpx;
+  margin-top:16rpx;
+}
+.rightInfo .desc{
+  font-size: 24rpx;
+  color: #434343;
+}
+.rightInfo .price {
+  color:#EA4350;
+  font-size: 24rpx;
+}
+.rightInfo .price text{
+  font-size: 18rpx;
+}

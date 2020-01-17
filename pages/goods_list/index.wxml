@@ -1,2 +1,24 @@
 <!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<view class="goodsList">
+  <!-- 引入搜索子组件 -->
+  <searchInput />
+  <!-- 头部tab栏 -->
+  <view class="tab">
+    <view class="tab-item active">综合</view>
+    <view class="tab-item">销量</view>
+    <view class="tab-item">价格</view>
+  </view>
+  <view class="content">
+    <navigator>
+      <view class="leftPic">
+        <image src="/pages/goods_list/icons/cart.png"></image>
+      </view>
+      <view class="rightInfo">
+        <view class="desc">创维若非无创维若非无创维若非无创维若非无创维若非无</view>
+        <view class="price">
+          <text>￥</text> 3999</view>
+      </view>
+    </navigator>
+  </view>
+
+</view>
