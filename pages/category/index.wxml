@@ -2,13 +2,15 @@
   <searchInput class="input" />
   <view class="main">
     <view class="category-list">
-      <scroll-view scroll-y="true" style="height:1000rpx">
-        <navigator>
-          <view class="list_item" wx:for="{{category_list}}" wx:key="index">{{item.cat_name}}                </view>
-        </navigator>
+      <scroll-view scroll-y="true" style="height:1020rpx">
+          <view class="list_item {{currentTab==index ? 'active':''}}"
+          wx:for="{{category_list}}" wx:key="index" bindtap="Tofilter" data-id="{{index}}"
+          >{{item.cat_name}} </view>
       </scroll-view>
     </view>
     <!-- 子组件 -->
-    <categoryList class="content" list="list"/>
+    <scroll-view scroll-y="true" style="height:1020rpx" class="content">
+      <categoryList  dataFromParent="{{category_list}}" tab="{{currentTab}}" />
+    </scroll-view>
   </view>
 </view>

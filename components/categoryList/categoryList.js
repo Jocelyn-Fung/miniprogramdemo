@@ -3,9 +3,13 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    title: {
-      type: String,
-      value: ''
+    dataFromParent: {
+      type: Array,
+      value: []
+    },
+    tab:{
+      type:Number,
+      value:0
     }
   },
 
@@ -20,9 +24,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    //   handleMyTap(){
-    //     console.log("wqw")
-    //     this.triggerEvent('handle','一样')
-    //   }
+    // test(e){
+    //   console.log(e)
+    // }
   }
 })

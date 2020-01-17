@@ -1,7 +1,4 @@
 <!--index.wxml-->
-<!-- 使用组件 <view class="nav">
-  <view class="search">搜索</view>
-</view> -->
 <searchInput />
 <!-- 轮播图 -->
 <swiper indicator-dots="{{true}}" autoplay="{{true}}" class="swiper">
@@ -36,9 +33,11 @@
       </navigator>
     </view>
     <view class="right">
-      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
-        <image wx:for="{{item.product_list}}" wx:key="index" wx:for-index="i" wx:for-item="v" wx:if="{{i!==0 ? true:false}}" src="{{v.image_src}}"></image>
-      </navigator>
+      <block wx:for="{{item.product_list}}" wx:key="index" wx:for-index="i" wx:for-item="v" wx:if="{{i!==0 ? true:false}}">
+        <navigator class="nav" url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+          <image src="{{v.image_src}}"></image>
+        </navigator>
+      </block>
     </view>
   </view>
 

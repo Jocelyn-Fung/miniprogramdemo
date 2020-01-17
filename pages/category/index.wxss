@@ -9,7 +9,7 @@
 }
 .category-list  {
   background-color: #f3f3f3;
-  width: 182rpx;
+  flex: 182rpx;
   font-size: 28rpx;
   color: #585858;
   margin-top:100rpx;

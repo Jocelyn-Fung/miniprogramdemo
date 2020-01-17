@@ -1,8 +1,6 @@
 /* components/categoryList/categoryList.wxss */
 .cate-list{
   margin-top:100rpx;
-  /* position: fixed; */
-
 }
 .title{
   text-align: center;
@@ -12,12 +10,12 @@
 }
 .list{
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  width:100%;
 }
 .list-item{
-  display: flex;
-  flex-direction: column;
-  width:120rpx;
+  /* width:120rpx; */
+  width:33.33%;
   text-align: center;
 }
 .list image{

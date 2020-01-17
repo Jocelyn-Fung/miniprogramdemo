@@ -42,7 +42,7 @@ navigator{
 .pics{
   display: flex;
   height:386rpx;
-  margin-left:6px;
+  margin-left:15rpx;
   box-sizing: border-box;
 }
 .left{
@@ -58,14 +58,23 @@ navigator{
   flex:67%;
   display: flex;
   flex-wrap:wrap;
+  /* margin-right:7rpx; */
+}
+.right .nav{
+  height:50%;
 }
 .right image{
   height:188rpx;
   width:233rpx;
-  margin: 6rpx;
+  margin: 5rpx;
   border-radius: 3px;
 }
 .right :nth-child(1),
 .right :nth-child(2){
   margin-top: 0rpx;
+}
+.right :nth-child(3),
+.right :nth-child(4){
+  margin-bottom: 0rpx;
+  margin-top:5rpx;
 }

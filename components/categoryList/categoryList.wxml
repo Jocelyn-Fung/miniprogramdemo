@@ -1,11 +1,13 @@
-<view class="cate-list">
-  <view class="title">/ 电视 /</view>
-  <view class="list">
-    <view class="list-item" >
-      <navigator>
-        <image src="/components/categoryList/icons/cart.png"></image>
-        <text>曲面电视</text>
-      </navigator>
+  <view wx:for="{{dataFromParent[tab].children}}" wx:key="index1" wx:for-item="v" class="cate-list">
+    <!-- title -->
+    <view  class="title">/ {{v.cat_name}} /</view>
+    <!-- 列表 -->
+    <view class="list">
+      <view class="list-item" wx:for="{{v.children}}" wx:key="index2" wx:for-item="v1">
+        <navigator url="" open-open-type="navigateTo" >
+          <image src="{{v1.cat_icon}}"></image>
+          <view bindtap="test">{{v1.cat_name}}{{tab}}</view>
+        </navigator>
+      </view>
     </view>
   </view>
-</view>
