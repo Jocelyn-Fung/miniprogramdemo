@@ -1,3 +1,4 @@
+import {request} from '../../request/request.js'
 Page({
 
   /**
@@ -13,6 +14,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 轮播图请求
+
     wx.request({
       url:'https://api.zbztb.cn/api/public/v1/home/swiperdata',
       method:'get',
@@ -25,7 +28,12 @@ Page({
         }
       }
     }),
-    // 导航栏
+
+
+
+
+
+    // 导航栏 请求
       wx.request({
         url: 'https://api.zbztb.cn/api/public/v1/home/catitems',
         method: 'get',
@@ -38,7 +46,7 @@ Page({
           }
         }
       }),
-      // 楼层
+      // 楼层请求
       wx.request({
         url: 'https://api.zbztb.cn/api/public/v1/home/floordata',
         method: 'get',

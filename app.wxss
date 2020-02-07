@@ -17,5 +17,5 @@ page,view, text, image,navigator{
 }
 /* 定义一个全局的主题颜色 */
 page{
-  --themColor:#ea4350;
+  --themeColor:#ea4350;
 }

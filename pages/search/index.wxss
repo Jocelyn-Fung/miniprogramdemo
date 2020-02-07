@@ -1,1 +1,22 @@
-/* pages/search/index.wxss */
+.search {
+  display: flex;
+  font-size: 25rpx;
+  margin-top: 15rpx;
+  justify-content: space-evenly;
+}
+.search input.iconfont {
+  height: 61rpx;
+  width: 599rpx;
+  border-radius: 27rpx;
+  background-color: #E7E7E7;
+  font-size: 25rpx;
+}
+.search view {
+  height: 61rpx;
+  width: 101rpx;
+  line-height: 61rpx;
+  text-align: center;
+  background-color: var(--themeColor);
+  border-radius: 8rpx;
+  color: white;
+}

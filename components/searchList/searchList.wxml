@@ -1,0 +1,8 @@
+<view class="searchList">
+  <block wx:for="{{dataFromParent}}" wx:key="index">
+    <navigator open-type="navigate" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+      <image src="https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg" />
+      <view>{{item.goods_name}}</view>
+    </navigator>
+  </block>
+</view>

@@ -4,9 +4,9 @@
     <!-- 列表 -->
     <view class="list">
       <view class="list-item" wx:for="{{v.children}}" wx:key="index2" wx:for-item="v1">
-        <navigator url="" open-open-type="navigateTo" >
+        <navigator url="" open-type="navigateTo" >
           <image src="{{v1.cat_icon}}"></image>
-          <view bindtap="test">{{v1.cat_name}}{{tab}}</view>
+          <view>{{v1.cat_name}}</view>
         </navigator>
       </view>
     </view>

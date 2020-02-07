@@ -1,10 +1,16 @@
 /* pages/category/index.wxss */
+page{
+  height:100%;
+  overflow: hidden;
+}
 .input{
   width:100%;
   position: fixed;
-   z-index: 33;
+  z-index: 33;
+  
 }
 .main {
+  padding-top: 100rpx;
   display: flex;
 }
 .category-list  {
@@ -12,7 +18,7 @@
   flex: 182rpx;
   font-size: 28rpx;
   color: #585858;
-  margin-top:100rpx;
+  overflow: hidden;
 }
 
 .category-list .list_item {

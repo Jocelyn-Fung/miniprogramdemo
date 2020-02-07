@@ -1,2 +1,7 @@
-<!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<view class="search">
+<input placeholder="输入商品名" class="iconfont" bindinput="inputContent"></input>
+<view bindtap="handleSearch">搜索</view>
+</view>
+
+<!-- 点击搜索后获取的数据 -->
+<searchList dataFromParent="{{searchList}}"/>

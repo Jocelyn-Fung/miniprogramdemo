@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <searchInput />
 <!-- 轮播图 -->
-<swiper indicator-dots="{{true}}" autoplay="{{true}}" class="swiper">
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="3000" circular class="swiper">
   <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="index">
     <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
       <image src='{{item.image_src}}' mode="scaleToFill"></image>
@@ -19,7 +19,7 @@
   </view>
 </view>
 
-<!-- 主题爆款 -->
+<!-- 主题爆款楼层 -->
 <view class="themes" wx:for="{{floors}}" wx:key="index1">
   <view class="title">
     <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">

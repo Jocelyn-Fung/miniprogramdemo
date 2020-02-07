@@ -9,8 +9,11 @@
       </scroll-view>
     </view>
     <!-- 子组件 -->
-    <scroll-view scroll-y="true" style="height:1150rpx" class="content">
-      <categoryList  dataFromParent="{{category_list}}" tab="{{currentTab}}" />
-    </scroll-view>
+    <view class="category-listaaa">
+      <scroll-view scroll-y="true" style="height:1150rpx" class="content">
+        <categoryList  dataFromParent="{{category_list}}" tab="{{currentTab}}" />
+      </scroll-view>
+    </view>
+    
   </view>
 </view>

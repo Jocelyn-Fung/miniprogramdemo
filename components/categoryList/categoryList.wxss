@@ -1,7 +1,7 @@
 /* components/categoryList/categoryList.wxss */
 .cate-list{
-  margin-top:100rpx;
-}
+    overflow: hidden;
+} 
 .title{
   text-align: center;
   color:#575757;
@@ -14,7 +14,6 @@
   width:100%;
 }
 .list-item{
-  /* width:120rpx; */
   width:33.33%;
   text-align: center;
 }
