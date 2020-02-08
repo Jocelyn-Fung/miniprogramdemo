@@ -30,8 +30,8 @@ page{
 }
 
 .active {
-  border-left: 2px solid #eb4450;
-  color: #eb4450;
+  border-left: 2px solid var(--themeColor);
+  color: var(--themeColor);
 
 }
 .content{

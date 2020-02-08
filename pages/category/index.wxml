@@ -2,7 +2,7 @@
   <searchInput class="input" />
   <view class="main">
     <view class="category-list">
-      <scroll-view scroll-y="true" style="height:1030rpx">
+      <scroll-view scroll-y="true" style="height:1030rpx" >
           <view class="list_item {{currentTab==index ? 'active':''}}"
           wx:for="{{category_list}}" wx:key="index" bindtap="Tofilter" data-id="{{index}}"
           >{{item.cat_name}} </view>

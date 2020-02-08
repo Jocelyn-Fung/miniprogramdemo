@@ -2,6 +2,6 @@
 <input placeholder="输入商品名" class="iconfont" bindinput="inputContent"></input>
 <view bindtap="handleSearch">搜索</view>
 </view>
-
+<image src="https://ae01.alicdn.com/kf/H7982da78a82645068c6051cb8395c6efi.png"/>
 <!-- 点击搜索后获取的数据 -->
 <searchList dataFromParent="{{searchList}}"/>
