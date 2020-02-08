@@ -87,15 +87,14 @@ Page({
   },
   // 上拉加载
   onReachBottom: function(){
-  //  if(this.totalPages >= this.QueryParams.pagenum){
-  //    this.QueryParams.pagenum++;
-  //    this.getGoodsList();
-  //  }else{
-  //    wx.showToast({
-  //      title: '没有更多数据了',
-  //    })
-  //  }
-  console.log('我被触发;')
+   if(this.totalPages >= this.QueryParams.pagenum){
+     this.QueryParams.pagenum++;
+     this.getGoodsList();
+   }else{
+     wx.showToast({
+       title: '没有更多数据了',
+     })
+   }
   },
     /**
    * 生命周期函数--监听页面隐藏
@@ -108,20 +107,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
 
   },
 
