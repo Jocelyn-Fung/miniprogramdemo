@@ -47,7 +47,7 @@ Page({
     if(!cates){   //如果没有data就发送请求， 否则判断时间是否有效
       this.getCategoryList();
     }else{
-      if(Date.now()-cates.time>1000*10){ //判断时间是否已经过期 >10s，重新发送请求
+      if(Date.now()-cates.time>1000*60){ //判断时间是否已经过期 >10s，重新发送请求
         this.getCategoryList();
       }else{   //符合时间，在本地拿数据， 进行赋值
         let categoryList = cates.data

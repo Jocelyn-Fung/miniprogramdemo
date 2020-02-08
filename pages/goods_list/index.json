@@ -1,10 +1,12 @@
 {
   "usingComponents": {
-    "searchInput":"/components/searchInput/searchInput"
+    "searchInput":"/components/searchInput/searchInput",
+    "goodsTabs":"/components/goodsTabs/goodsTabs"
   },
-  "backgroundTextStyle": "light",
+  "backgroundTextStyle": "dark",
   "navigationBarBackgroundColor": "#eb4450",
   "navigationBarTitleText": "商品列表",
   "navigationBarTextStyle": "white",
-  "navigationBarFontSize": "18px"
+  "navigationBarFontSize": "18px",
+  "enablePullDownRefresh":true
 }

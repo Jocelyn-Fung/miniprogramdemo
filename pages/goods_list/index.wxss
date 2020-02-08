@@ -1,43 +1,43 @@
 /* pages/goods_list/index.wxss */
-.tab{
+
+.content navigator {
   display: flex;
-  justify-content: space-around;
+  margin: 0rpx 26rpx;
 }
-.tab .tab-item{
-  flex:1;
-  text-align: center;
-  padding:20rpx 0rpx;
-  margin-bottom: 10rpx;
-}
-.active{
-  border-bottom: 2px solid #eb4450;
-}
-.content navigator{
-  display: flex;
-  margin-left:41rpx;
-  margin-right:26rpx;
-}
-.leftPic{
+
+.leftPic {
+  margin: 9rpx 15rpx;
   flex: 200rpx;
-  background-color:pink;
 }
-.leftPic image{
-  height:191rpx;
-  width:191rpx;
+
+.leftPic image {
+  height: 191rpx;
+  width: 191rpx;
 }
-.rightInfo{
-  flex:518rpx;
-  margin-left:29rpx;
-  margin-top:16rpx;
+
+.rightInfo {
+  flex: 518rpx;
+  padding: 16rpx 0rpx 29rpx 29rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.rightInfo .desc{
+
+.rightInfo .desc {
   font-size: 24rpx;
   color: #434343;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
+
 .rightInfo .price {
-  color:#EA4350;
+  color: #ea4350;
   font-size: 24rpx;
 }
-.rightInfo .price text{
+
+.rightInfo .price text {
   font-size: 18rpx;
 }

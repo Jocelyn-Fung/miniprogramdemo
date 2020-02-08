@@ -2,23 +2,26 @@
 <view class="goodsList">
   <!-- 引入搜索子组件 -->
   <searchInput />
-  <!-- 头部tab栏 -->
-  <view class="tab">
-    <view class="tab-item active">综合</view>
-    <view class="tab-item">销量</view>
-    <view class="tab-item">价格</view>
-  </view>
-  <view class="content">
-    <navigator>
+  <!-- 头部tab栏 子组件-->
+  <goodsTabs tabs="{{tabs}}" bind:handleIndexChange="handleIndexChange"/>
+  
+<!-- tab栏下对应的数据 -->
+<view wx:if="{{tab===0}}" class="content">
+    <navigator wx:for="{{goodsList}}" wx:key="index" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
       <view class="leftPic">
-        <image src="/pages/goods_list/icons/cart.png"></image>
+        <image src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg' }}"/>
       </view>
       <view class="rightInfo">
-        <view class="desc">创维若非无创维若非无创维若非无创维若非无创维若非无</view>
+        <view class="desc">{{item.goods_name}}</view>
         <view class="price">
-          <text>￥</text> 3999</view>
+          <text>￥</text>{{item.goods_price}}</view>
       </view>
     </navigator>
-  </view>
+</view>
+<view wx:if="{{tab===1}}">2</view>
+<view wx:if="{{tab===2}}">3</view>
+
+
+
 
 </view>
