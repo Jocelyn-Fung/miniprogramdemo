@@ -9,7 +9,7 @@ Page({
   data: {
     category_list:[],
     currentTab:0,
-   // scroll_top:0 //右边滚动条的位置
+    scroll_top:0 //右边滚动条的位置
   },
 
   /**
@@ -73,6 +73,14 @@ Page({
       category_list: categoryList
     })
   },
+  Tofilter(e) {
+    // console.log(e)
+    this.setData({
+      currentTab: e.currentTarget.dataset.id,
+      scroll_top: 0  //点击的时候让它滚动位置在0
+    })
+    // console.log(this.data.currentTab)
+  },
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -107,13 +115,7 @@ Page({
    */
   onShareAppMessage: function () {
     
-  },
-  Tofilter(e){
-    // console.log(e)
-    this.setData({
-      currentTab: e.currentTarget.dataset.id
-    })
-    // console.log(this.data.currentTab)
   }
+ 
  
 })
