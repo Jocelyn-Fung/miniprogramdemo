@@ -13,54 +13,57 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  // 获取轮播图数据
+  getBanner: async function(){
+      const banner = await request({
+        url: '/home/swiperdata',
+      })
+    // console.log(banner)
+    this.setData({
+      banner
+    })
+  },
+  // 获取导航栏数据
+  getNavbars: async function(){
+    const navbars = await request({
+      url: '/home/catitems'
+    })
+    // console.log(navbars)
+    this.setData({
+      navbars
+    })
+  },
+  // 获取楼层数据
+  getFloors: async function(){
+    const floors = await request({
+      url: '/home/floordata'
+    })
+    // console.log(floors)
+    this.setData({
+      floors
+    })
+  },
   onLoad: function (options) {
     // 轮播图请求
-
-    wx.request({
-      url:'https://www.linweiqin.cn/api/public/v1/home/swiperdata',
-      method:'get',
-      success:(res)=>{
-        // console.log(res)
-        if(res.statusCode===200){
-          this.setData({
-            banner: res.data.message
-          })
-        }
-      }
-    }),
-
-
-
-
-
+  this.getBanner();
     // 导航栏 请求
-      wx.request({
-      url: 'https://www.linweiqin.cn/api/public/v1/home/catitems',
-        method: 'get',
-        success: (res) => {
-          // console.log(res)
-          if (res.statusCode === 200) {
-            this.setData({
-              navbars: res.data.message
-            })
-          }
-        }
-      }),
+  this.getNavbars();
       // 楼层请求
-      wx.request({
-      url: 'https://www.linweiqin.cn/api/public/v1/home/floordata',
-        method: 'get',
-        success: (res) => {
-          // console.log(res)
-          if (res.statusCode === 200) {
-            this.setData({
-              floors: res.data.message,
-              // product_list: res.data.message.product_list
-            })
-          }
-        }
-      })
-      
+  this.getFloors();
+  // 封装前的请求写法
+      // wx.request({
+      // url: 'https://www.linweiqin.cn/api/public/v1/home/floordata',
+      //   method: 'get',
+      //   success: (res) => {
+      //     // console.log(res)
+      //     if (res.statusCode === 200) {
+      //       this.setData({
+      //         floors: res.data.message,
+      //         // product_list: res.data.message.product_list
+      //       })
+      //     }
+      //   }
+      // })
   },
 
   /**
