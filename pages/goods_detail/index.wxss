@@ -1,16 +1,14 @@
 .goodsDetailBGC {
   background-color: #f9f9f9;
-  /* background-color:pink; */
-  height:1100rpx;
 }
 .goodsDetailBGC .goodsDetail {
   background-color: #fff;
-  border-radius:0 0 20rpx 20rpx;
 }
 .goodsDetailBGC .goodsDetail .goodsDetail_swiper {
   margin: 0rpx 126rpx;
 }
 .goodsDetailBGC .goodsDetail .goodsDetail_swiper swiper {
+  background-color: #fff;
   height: 497rpx;
   width: 497rpx;
 }
@@ -47,6 +45,8 @@
   opacity: 0;
 }
 .goodsDetailBGC .goodsDetail .title {
+  background-color: #fff;
+  border-radius: 0 0 15rpx 15rpx;
   font-size: 30rpx;
   padding: 0rpx 36rpx 48rpx 33rpx;
   display: -webkit-box;

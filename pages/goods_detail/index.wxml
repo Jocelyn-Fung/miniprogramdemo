@@ -11,14 +11,13 @@
   <!--价格 收藏 分享  -->
   <view class="goodsDetail_PriceAndShare">
     <!-- 价格 -->
-    <view class="goodsDetail_Price">￥
-      <text>{{goodsDetail.goods_price}}</text>
+    <view class="goodsDetail_Price">￥<text>{{goodsDetail.goods_price}}</text>
     </view>
     <!-- 收藏与分享 -->
     <view class="goodsDetail_shareAndCollect">
       <view class="iconfont icon-fenxiang"></view>
       <button class="default" size="default" open-type="share" type="warn"></button>
-      <view class="iconfont icon-shoucang"></view>
+      <view class="iconfont icon-shoucang" bindtap="handleCollect"></view>
     </view>
   </view>
   <!-- 说明 -->
