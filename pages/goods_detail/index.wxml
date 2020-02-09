@@ -1,3 +1,27 @@
-<!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
-<view>列表详情页</view>
+<view class="goodsDetailBGC">
+<view class="goodsDetail">
+  <!-- 轮播图部分 -->
+  <view class="goodsDetail_swiper">
+    <swiper circular="true" indicator-dots="true" indicator-active-color="var(--themeColor)" autoplay="true" duration="2000">
+      <swiper-item wx:for="{{goodsDetail.pics}}" wx:key="index">
+        <image src="{{item.pics_mid}}" bindtap="handleClick" data-pics="{{goodsDetail.pics}}" data-current="{{item.pics_mid}}" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--价格 收藏 分享  -->
+  <view class="goodsDetail_PriceAndShare">
+    <!-- 价格 -->
+    <view class="goodsDetail_Price">￥
+      <text>{{goodsDetail.goods_price}}</text>
+    </view>
+    <!-- 收藏与分享 -->
+    <view class="goodsDetail_shareAndCollect">
+      <view class="iconfont icon-fenxiang"></view>
+      <button class="default" size="default" open-type="share" type="warn"></button>
+      <view class="iconfont icon-shoucang"></view>
+    </view>
+  </view>
+  <!-- 说明 -->
+  <view class="title">{{goodsDetail.goods_name}}</view>
+</view>
+</view>

@@ -27,7 +27,7 @@ Component({
       this.setData({
         currentTabs
       })
-    //  console.log(this.data.currentTabs)
+    //  console.log(this.data.currentTabs) 子传父，传值给父亲
       this.triggerEvent("handleIndexChange", currentTabs)
     }
   }

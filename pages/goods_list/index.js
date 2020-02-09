@@ -9,17 +9,14 @@ Page({
       {
         index:0,
         value:"综合",
-        isActive:true,
       },
       {
         index: 1,
         value: "销量",
-        isActive: false,
       },
       {
         index: 2,
         value: "价格",
-        isActive: false,
       }
     ],
     tab:0,
@@ -48,7 +45,7 @@ Page({
     // 总页数= 总数据/每页的条数
     this.totalPages = Math.ceil(GoodsList.total / this.QueryParams.pagesize)
     this.setData({
-      goodsList: [...GoodsList.goods, ...this.data.goodsList]
+      goodsList: [...this.data.goodsList, ...GoodsList.goods,]
     })
     wx.stopPullDownRefresh()
     // console.log(this.data.goodsList)
@@ -58,7 +55,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 当前跳转页面栈，微信自带
+    // 当前页面栈，微信自带
     const pages = getCurrentPages();
     // console.log('11',pages)
     const currentPage = pages[pages.length-1];
