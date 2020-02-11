@@ -45,12 +45,15 @@
   color: var(--themeColor);
   font-size: 24rpx;
 }
+.carts .goods .rightSide .priceAndMount .mount {
+  display: flex;
+  align-items: center;
+}
 .carts .goods .rightSide .priceAndMount .mount image {
   height: 35rpx;
   width: 35rpx;
 }
 .carts .goods .rightSide .priceAndMount .mount text {
-  vertical-align: center;
   font-size: 24rpx;
   color: #434343;
   margin: 0 10rpx;
