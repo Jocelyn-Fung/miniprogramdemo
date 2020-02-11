@@ -44,6 +44,9 @@
   left: 0;
   opacity: 0;
 }
+.goodsDetailBGC .goodsDetail .goodsDetail_PriceAndShare .goodsDetail_shareAndCollect .iconfont.icon-shoucang_gaoliang {
+  color: var(--themeColor) !important;
+}
 .goodsDetailBGC .goodsDetail .title {
   background-color: #fff;
   border-radius: 0 0 15rpx 15rpx;

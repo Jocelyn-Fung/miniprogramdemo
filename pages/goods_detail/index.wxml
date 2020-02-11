@@ -17,7 +17,7 @@
     <view class="goodsDetail_shareAndCollect">
       <view class="iconfont icon-fenxiang"></view>
       <button class="default" size="default" open-type="share" type="warn"></button>
-      <view class="iconfont {{isCollect}}" bindtap="handleCollect"></view>
+      <view class="iconfont {{isCollect==true? 'icon-shoucang_gaoliang' :'icon-shoucang'}}" bindtap="handleCollect"></view>
     </view>
   </view>
   <!-- 说明 -->

@@ -9,7 +9,7 @@ Page({
   data: {
     goodsDetail: {},
     goodsIdArray: [],
-    isCollect: "icon-shoucang"
+    isCollect: false   //默认未收藏
   },
 
 
@@ -20,24 +20,6 @@ Page({
     // console.log('33',options)
     //调用页面加载数据
     this.getGoodsDetail(options)
-    // 保存商品id
-    let goods_id = options.goods_id
-    // 获取本地数据，如果有id说明是收藏的，高亮星星
-    wx.getStorage({
-      key: 'goodsIdArray',
-      success: res => {
-        // console.log(res)
-        res.data.forEach(e => {
-          // console.log(e)
-          // 如果本地数组中有匹配项，那么切换类成高亮
-          if (e == goods_id) {
-            this.setData({
-              isCollect: "icon-shoucang_gaoliang"
-            })
-          }
-        })
-      },
-    })
   },
   // 获取数据
   getGoodsDetail: async function(params) {
@@ -45,18 +27,16 @@ Page({
       url: '/goods/detail',
       data: params,
     })
-    // console.log(goodsDetail)
+    // console.log(goodsDetail.goods_id)
     this.setData({
       goodsDetail
     })
+    this.collect()  //调用封装，加载得时候获取缓存进行判断
   },
   // 点击图片预览事件处理函数
   handleClick(e) {
     // console.log(e)
-    let {
-      pics,
-      current
-    } = e.currentTarget.dataset
+    let { pics, current} = e.currentTarget.dataset
     // console.log(pics,current)
     wx.previewImage({
       urls: pics.map(v => v.pics_mid), //将数组中的pics_mid循环遍历生成一个新数组
@@ -65,61 +45,57 @@ Page({
   },
   //点击收藏，点击取消  
   handleCollect: function() {
-    let {
-      goods_id
-    } = this.data.goodsDetail
-    let goodsId = this.data.goodsIdArray
+    let {goods_id } = this.data.goodsDetail
     // console.log('222',goods_id)
     // 如果用户的收藏数组中没有任何内容，点击就直接收藏改商品
-    wx.getStorage({
-      key: 'goodsIdArray',
-      // 说明本地还没有这个数组，便创建这个数组，把数据push进去
-      fail: () => {
-        goodsId.push(goods_id)
-        wx.setStorage({
+    // 从本地获取数组，没有的话就给个空【】
+    // 如果数组长度是0，那么点击的时候就push
+    // 否则就进行匹配，在匹配上的时候就取消收藏，否则就保存收藏进缓存
+    let goodsIdArray = wx.getStorageSync("goodsIdArray")||[];
+    if (!goodsIdArray.length){
+      goodsIdArray.push(goods_id)
+      // console.log('00',goodsIdArray)
+      wx.setStorage({
           key: 'goodsIdArray',
-          data: goodsId,
+        data: goodsIdArray,
         })
         // console.log(this)
         this.setData({
-            isCollect: "icon-shoucang_gaoliang"
+            isCollect:true
           }),
           wx.showToast({
             title: '收藏成功！',
           })
-
-      },
-      success: (res) => {
-        // 说明本地已经有数组了,那么遍历数组，有一样id的删除，没有的进行保存
-        // console.log(res.data) //未找到则返回-1
-          if (res.data.indexOf(goods_id)===-1) {
-            res.data.push(goods_id)
-            // console.log(res.data)
-            wx.setStorage({
-              key: 'goodsIdArray',
-              data: res.data,
-            })
-            this.setData({
-                isCollect: "icon-shoucang_gaoliang"
-              }),
-              wx.showToast({
-                title: '收藏成功！',
-              })
-          } else{
-           this.removeByValue(res.data, goods_id);
-           wx.setStorage({
-             key: 'goodsIdArray',
-             data: res.data,
-           })
-            this.setData({
-              isCollect: "icon-shoucang"
-            }),
-              wx.showToast({
-                title: '取消收藏！',
-              })
-          }
-      },
-    })
+    } else{
+        // 说明本地已经有数组了,那么遍历数组，有一样id的删除，没有的进行保存, -1表示没有符合条件的
+      if (goodsIdArray.indexOf(goods_id)===-1) {
+        goodsIdArray.push(goods_id)
+        // console.log('11',goodsIdArray)
+        wx.setStorage({
+          key: 'goodsIdArray',
+          data: goodsIdArray,
+        })
+        this.setData({
+          isCollect: true
+        }),
+          wx.showToast({
+            title: '收藏成功！',
+          })
+       } else{
+        this.removeByValue(goodsIdArray, goods_id);
+        // console.log('22',goodsIdArray)
+        wx.setStorage({
+          key: 'goodsIdArray',
+          data: goodsIdArray,
+        })
+        this.setData({
+          isCollect: false
+        }),
+          wx.showToast({
+            title: '取消收藏！',
+          })
+       }
+    }
   },
 
   //删除数组中指定元素 封装函数
@@ -129,6 +105,23 @@ Page({
         arr.splice(i, 1);
         break;
       }
+    }
+  },
+  // 封装点击收藏
+  collect(){
+    // 保存商品id
+    let goods_id =  this.data.goodsDetail.goods_id
+    let goodsIdArray = wx.getStorageSync("goodsIdArray")
+    // console.log('fengzhuang',goodsIdArray)
+    if (goodsIdArray){
+      // console.log(goodsIdArray)
+      goodsIdArray.forEach(e=>{
+        if (e == goods_id){
+          this.setData({
+              isCollect: true
+            })
+        }
+      })
     }
   },
   /**
