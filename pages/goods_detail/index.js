@@ -9,7 +9,8 @@ Page({
   data: {
     goodsDetail: {},
     goodsIdArray: [],
-    isCollect: false   //默认未收藏
+    isCollect: false,   //默认未收藏
+    goods:0
   },
 
 
@@ -19,7 +20,10 @@ Page({
   onLoad: function(options) {
     // console.log('33',options)
     //调用页面加载数据
-    this.getGoodsDetail(options)
+    this.getGoodsDetail(options);
+    this.setData({
+      goods: wx.getStorageSync("goodsTotal")
+    })
   },
   // 获取数据
   getGoodsDetail: async function(params) {
@@ -27,7 +31,7 @@ Page({
       url: '/goods/detail',
       data: params,
     })
-    // console.log(goodsDetail.goods_id)
+    // console.log(goodsDetail)
     this.setData({
       goodsDetail
     })
@@ -107,7 +111,7 @@ Page({
       }
     }
   },
-  // 封装点击收藏
+  // 封装页面加载的时候，是否已收藏
   collect(){
     // 保存商品id
     let goods_id =  this.data.goodsDetail.goods_id
@@ -124,6 +128,38 @@ Page({
       })
     }
   },
+  // 点击加入购物车
+  addCart: function(){
+  //  console.log(this.data.goodsDetail)
+  let goodsDetail = this.data.goodsDetail
+  let carts = wx.getStorageSync('carts')||[];
+  let goods = carts.length
+  let index = carts.findIndex(v=>v.goods_id===this.data.goodsDetail.goods_id)
+  // 如果index=-1的话，说明当前没有任何商品再数组中，数组的index从0开始
+  if(index===-1){
+   goodsDetail.num=1  //将数量存进去，以备后需++
+   goodsDetail.checked = true; //后面会购物小车用上
+    carts.push(goodsDetail)
+    this.setData({
+      goods:carts.length
+    })
+    wx.setStorageSync("carts", carts)
+    wx.setStorageSync("goodsTotal", carts.length)
+    wx.showToast({
+      title: '宝贝已放在购物车了,亲！',
+    })
+
+  } else{
+    //如果数组不是空的，点击就++
+    carts[index].num++;
+    wx.setStorageSync("carts", carts)
+    wx.setStorageSync("goodsTotal", carts.length)
+    wx.showToast({
+      'title':'宝贝已放在购物车了,亲！'
+    })
+  }
+  },
+  // 数组长度加上遍历数组中的num=总商品数量
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

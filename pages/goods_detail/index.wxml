@@ -22,5 +22,21 @@
   </view>
   <!-- 说明 -->
   <view class="title">{{goodsDetail.goods_name}}</view>
+  <!-- 图文详情部分 -->
+  <view class="desc">
+    <view>商品详情</view>
+    <rich-text nodes="{{goodsDetail.goods_introduce}}"></rich-text>
+  </view>
+</view>
+<!-- 底部栏 -->
+<view class="floorTabs">
+  <view class="iconfont icon-lianxikefu">联系客服</view>
+  <button type="warn"  open-type="contact"></button>
+  <navigator  url="/pages/cart/index" open-type="navigate">
+  <view class="iconfont icon-gouwuche">购物车</view>
+  <view class="num" wx:if="{{goods}}">{{goods}}</view>
+  </navigator>
+  <view class="addCart" bindtap="addCart">加入购物车</view>
+  <view class="buy">立即购买</view>
 </view>
 </view>
