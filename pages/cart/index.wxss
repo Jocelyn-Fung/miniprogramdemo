@@ -1,1 +1,108 @@
-/* pages/cart/index.wxss */
+.carts .goods {
+  display: flex;
+  align-items: center;
+  height: 209rpx;
+  margin: 27rpx 27rpx 0 27rpx;
+}
+.carts .goods .iconfont.icon-xuanzhong.leftSide {
+  height: 35rpx;
+  color: var(--themeColor);
+}
+.carts .goods .middle {
+  height: 191rpx;
+  width: 191rpx;
+}
+.carts .goods .middle image {
+  height: 100%;
+  width: 100%;
+  margin: 9rpx 19rpx;
+}
+.carts .goods .rightSide {
+  width: 410rpx;
+  margin-left: 40rpx;
+  line-height: 30rpx;
+}
+.carts .goods .rightSide .goods_name {
+  font-size: 26rpx;
+  color: #434343;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.carts .goods .rightSide .priceAndMount {
+  margin-top: 56rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.carts .goods .rightSide .priceAndMount .price {
+  color: var(--themeColor);
+  font-size: 18rpx;
+}
+.carts .goods .rightSide .priceAndMount .price text {
+  color: var(--themeColor);
+  font-size: 24rpx;
+}
+.carts .goods .rightSide .priceAndMount .mount image {
+  height: 35rpx;
+  width: 35rpx;
+}
+.carts .goods .rightSide .priceAndMount .mount text {
+  vertical-align: center;
+  font-size: 24rpx;
+  color: #434343;
+  margin: 0 10rpx;
+}
+.carts .pay {
+  height: 83rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 27rpx;
+}
+.carts .pay .left {
+  display: flex;
+}
+.carts .pay .left .iconfont.icon-xuanzhong {
+  height: 35rpx;
+  color: var(--themeColor);
+}
+.carts .pay .left .iconfont.icon-xuanzhong text {
+  font-size: 21rpx;
+  color: #8A8A8A;
+  margin: 0 30rpx;
+}
+.carts .pay .left .checkAll {
+  font-size: 26rpx;
+  color: #292929;
+  margin: 0 17rpx;
+}
+.carts .pay .left .checkAll text {
+  font-size: 28rpx;
+  color: var(--themeColor);
+}
+.carts .pay .left .checkAll text .rmb {
+  font-size: 20rpx;
+}
+.carts .pay .check {
+  background-color: var(--themeColor);
+  color: white;
+  line-height: 52rpx;
+  height: 52rpx;
+  width: 150rpx;
+  text-align: center;
+  font-size: 21rpx;
+  border-radius: 25rpx;
+}
+.carts .uncheck {
+  height: 35rpx;
+  width: 35rpx;
+  border: 2rpx solid #8A8A8A;
+  border-radius: 100rpx;
+}

@@ -1,2 +1,35 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<!-- 购物车 -->
+<view class="carts">
+  <!-- 商品部分-->
+  <view class="goods" wx:for ="{{carts}}" wx:key="index">
+    <view class="iconfont leftSide uncheck"></view>
+    <view class="middle">
+      <image src="{{item.goods_small_logo}}"></image>
+    </view>
+    <view class="rightSide">
+      <text class="goods_name">{{item.goods_name}}</text>
+      <view class="priceAndMount">
+        <view class="price">￥
+          <text >{{item.goods_price}}</text>
+        </view>
+        <view class="mount">
+          <image src="https://ae01.alicdn.com/kf/Ha2263d350e844f04ab8a0deedbb4f11de.png"></image>
+          <text>{{item.num}}</text>
+          <image src="https://ae01.alicdn.com/kf/H343f3d3a91414918986b019fb7649a3fb.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 结算部分 -->
+  <view class="pay">
+    <view class="left">
+      <view class="iconfont icon-xuanzhong">
+        <text>全选</text>
+      </view>
+      <view class="checkAll">合计：
+        <text><text class="rmb">￥</text>3999</text>
+      </view>
+    </view>
+    <view class="check">去结算(11)</view>
+  </view>
+</view>

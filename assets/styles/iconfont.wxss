@@ -59,7 +59,7 @@
   content: "\e618";
 }
 
-.icon-daishouhuo:before {
+.icon-daishouhuo:before { 
   content: "\e612";
 }
 

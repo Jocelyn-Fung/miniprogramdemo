@@ -32,7 +32,7 @@
 <view class="floorTabs">
   <view class="iconfont icon-lianxikefu">联系客服</view>
   <button type="warn"  open-type="contact"></button>
-  <navigator  url="/pages/cart/index" open-type="navigate">
+  <navigator  url="/pages/cart/index" open-type="switchTab">
   <view class="iconfont icon-gouwuche">购物车</view>
   <view class="num" wx:if="{{goods}}">{{goods}}</view>
   </navigator>

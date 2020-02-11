@@ -5,14 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    carts:[]
   },
 
+  // 从本地获取存在购物车的信息
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  let carts =  wx.getStorageSync('carts')
+   this.setData({
+     carts
+   })
+   console.log(carts)
   },
 
   /**
