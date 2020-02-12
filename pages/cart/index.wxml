@@ -1,16 +1,18 @@
 <!-- 购物车 -->
 <view class="carts">
-  <!-- 商品部分-->
-  <view class="goods" wx:for ="{{carts}}" wx:key="index">
-    <view class="iconfont leftSide uncheck"></view>
+  <!-- 商品部分 -->
+  <!-- A如果购物车有东西 -->
+  <view class="goods" wx:for="{{carts}}" wx:key="index" wx:if="{{carts.length}}">
+    <view class="iconfont leftSide {{item.checked? 'icon-xuanzhong':'uncheck'}}" bindtap="handleSelect" data-goods_id="{{item.goods_id}}"></view>
     <view class="middle">
       <image src="{{item.goods_small_logo}}"></image>
     </view>
     <view class="rightSide">
       <text class="goods_name">{{item.goods_name}}</text>
       <view class="priceAndMount">
-        <view class="price">￥
-          <text >{{item.goods_price}}</text>
+        <view class="price">
+          ￥
+          <text>{{item.goods_price}}</text>
         </view>
         <view class="mount">
           <image src="https://ae01.alicdn.com/kf/Ha2263d350e844f04ab8a0deedbb4f11de.png"></image>
@@ -20,14 +22,29 @@
       </view>
     </view>
   </view>
+  <!-- A 如果购物车没有商品 -->
+  <view class="emptyCarts" wx:if="{{!carts.length}}">
+    <image src="http://hbimg.b0.upaiyun.com/e1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658" mode="widthFix"></image>
+    <view class="desc">
+      <view class="mainDesc">购物车居然是空的</view>
+      <view class="subDesc">再忙，也记得买点什么犒劳自己~</view>
+      <navigator url="/pages/category/index" open-type="switchTab">
+        <view class="goShopping">
+          去逛逛
+        </view>
+      </navigator>
+    </view>
+  </view>
   <!-- 结算部分 -->
-  <view class="pay">
+  <view class="pay" wx:if="{{carts.length}}">
     <view class="left">
-      <view class="iconfont icon-xuanzhong">
-        <text>全选</text>
-      </view>
-      <view class="checkAll">合计：
-        <text><text class="rmb">￥</text>3999</text>
+      <view class="iconfont {{checkAll? 'icon-xuanzhong':'uncheck'}}" bindtap="handleSelectAll"></view>
+      <text class="selectAll">全选</text>
+      <view class="total">
+        合计：
+        <text>
+          <text class="rmb">￥</text> 3999
+        </text>
       </view>
     </view>
     <view class="check">去结算(11)</view>

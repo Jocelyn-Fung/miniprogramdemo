@@ -70,7 +70,7 @@
             }
         }
     }
-
+   
     .pay {
         height: 83rpx;
         width: 100%;
@@ -84,7 +84,7 @@
 
         .left {
             display: flex;
-
+            align-items: center;
             .iconfont.icon-xuanzhong {
                 height: 35rpx;
                 color: var(--themeColor);
@@ -94,9 +94,14 @@
                     color: #8A8A8A;
                     margin: 0 30rpx;
                 }
+                
             }
-
-            .checkAll {
+           .selectAll{
+                font-size: 21rpx;
+                color: #8A8A8A;
+                margin: 0 20rpx;
+                }
+            .total {
                 font-size: 26rpx;
                 color: #292929;
                 margin: 0 17rpx;
@@ -123,7 +128,7 @@
             border-radius: 25rpx;
         }
     }
-
+   
     .uncheck {
         height: 35rpx;
         width: 35rpx;
@@ -131,3 +136,39 @@
         border-radius: 100rpx;
     }
 }
+ // 购物车空
+    .emptyCarts {
+        width:100%;
+        image {
+            width:100%;
+        }
+        .desc {
+            text-align: center;
+            width:100%;
+            line-height: 55rpx;
+        .mainDesc {
+            font-size: 34rpx;
+            font-size: #434343;
+          }
+      
+         .subDesc {
+            font-size: 30rpx;
+            color:#d3d0d4;
+          }
+      
+          navigator {
+              display: flex;
+              justify-content: center;
+          .goShopping {
+            border:1px solid #d3d0d4;
+            font-size: 26rpx;
+            color: var(--themeColor);
+            height:65rpx;
+            width:130rpx;
+            line-height: 65rpx;
+            text-align: center;
+            vertical-align: center;
+            }
+          }
+        }
+      }
