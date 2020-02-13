@@ -1,1 +1,97 @@
-/* pages/pay/index.wxss */
+.pay {
+  background-color: #f9f9f9;
+  padding: 21rpx 0 35rpx 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pay .chooseAddress {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 187rpx;
+  width: 711rpx;
+  border-radius: 10rpx;
+}
+.pay .chooseAddress .choose {
+  border: 2rpx solid var(--themeColor);
+  padding: 20rpx 30rpx;
+  color: var(--themeColor);
+  font-size: 30rpx;
+}
+.pay .allAddress {
+  background-color: #fff;
+  height: 187rpx;
+  width: 711rpx;
+  border-radius: 10rpx;
+  padding: 16rpx 17rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pay .allAddress .address {
+  font-size: 30rpx;
+  color: #434343;
+  font-weight: 600;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.pay .allAddress .userInfo {
+  font-size: 26rpx;
+  padding-bottom: 10rpx;
+}
+.pay .allAddress .userInfo text {
+  margin-left: 20rpx;
+}
+.pay .ChosenList {
+  background-color: #fff;
+  width: 711rpx;
+  margin-top: 35rpx;
+  padding: 16rpx 17rpx;
+  border-radius: 10rpx;
+}
+.pay .ChosenList .chosenGoods {
+  font-size: 26rpx;
+  color: #434343;
+  font-weight: 600;
+  padding-bottom: 16rpx;
+}
+.pay .ChosenList .list {
+  display: flex;
+  margin-top: 26rpx;
+}
+.pay .ChosenList .list image {
+  height: 191rpx;
+  width: 191rpx;
+  margin-right: 29rpx;
+}
+.pay .ChosenList .list .info {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pay .ChosenList .list .info .title {
+  font-size: 24rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.pay .ChosenList .list .info .priceAndNum {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+.pay .ChosenList .list .info .priceAndNum .price {
+  color: var(--themeColor);
+}
+.pay .ChosenList .list .info .priceAndNum .price text {
+  font-size: 18rpx;
+}
+.pay .ChosenList .list .info .priceAndNum .num {
+  margin-right: 15rpx;
+}

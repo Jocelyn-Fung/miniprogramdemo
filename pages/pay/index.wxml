@@ -1,2 +1,25 @@
-<!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<view class="pay">
+  <!-- b 有地址 -->
+  <view class="allAddress" wx:if="{{address.all}}">
+   <view class="address"> {{address.all}}</view>
+   <view class="userInfo">{{address.userName}} <text>{{address.telNumber}}</text></view>
+  </view>
+  <!-- a 如果还没有地址 -->
+  <view class="chooseAddress" wx:else>
+  <text class="choose" bindtap="getsetting">选择地址</text>
+  </view>
+  <!-- 已选商品列表 -->
+  <view class="ChosenList">
+    <view class="chosenGoods">已选商品</view>
+    <view class="list" wx:for="{{carts}}" wx:key="index">
+      <image src="{{item.goods_small_logo}}"></image>
+      <view class="info">
+        <view class="title">{{item.goods_name}}</view>
+        <view class="priceAndNum">
+          <view class="price"><text>￥</text>{{item.goods_price}}</view>
+          <view class="num">x{{item.num}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

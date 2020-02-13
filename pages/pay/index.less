@@ -1,0 +1,112 @@
+.pay {
+    background-color: #f9f9f9;
+    // background-color: pink;
+    padding: 21rpx 0 35rpx 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .chooseAddress {
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 187rpx;
+        width: 711rpx;
+        border-radius: 10rpx;
+
+        .choose {
+            border: 2rpx solid var(--themeColor);
+            padding: 20rpx 30rpx;
+            color: var(--themeColor);
+            font-size: 30rpx;
+            // margin: 20rpx 0;
+        }
+    }
+
+    .allAddress {
+        background-color: #fff;
+        height: 187rpx;
+        width: 711rpx;
+        border-radius: 10rpx;
+        padding: 16rpx 17rpx;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .address {
+            font-size: 30rpx;
+            color: #434343;
+            font-weight: 600;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .userInfo {
+            font-size: 26rpx;
+            padding-bottom: 10rpx;
+            text {
+                margin-left:20rpx;
+            }
+        }
+    }
+
+    // 列表信息
+    .ChosenList {
+        background-color: #fff;
+        width: 711rpx;
+        margin-top: 35rpx;
+        padding: 16rpx 17rpx;
+        border-radius: 10rpx;
+
+        .chosenGoods {
+            font-size: 26rpx;
+            color:#434343;
+            font-weight: 600;
+            padding-bottom: 16rpx;
+        }
+
+        .list {
+            display: flex;
+            margin-top:26rpx;
+            image {
+                // background-color: red;
+                height: 191rpx;
+                width: 191rpx;
+                margin-right: 29rpx;
+            }
+
+            .info {
+                flex:6;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .title {
+                    font-size: 24rpx;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+
+                .priceAndNum {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 24rpx;
+                    .price {
+                       color:var(--themeColor);
+                        text {
+                            font-size: 18rpx;
+                        }
+                    }
+                    .num{
+                        margin-right:15rpx;
+                    }
+                }
+            }
+        }
+    }
+}
