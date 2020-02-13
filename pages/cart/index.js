@@ -1,4 +1,5 @@
 // pages/cart/index.js
+import { showModal } from '../../utils/async.js'
 Page({
 
   /**
@@ -34,15 +35,7 @@ Page({
     let checkAll = true; //假设为真
     let totalPrice = 0;
     let totalNum = 0;
-
-    // for(let i=0; i<carts.length; i++){
-    //   if(!carts[i].checked){
-    //     checkAll=false;
-    //   }else{
-    //     totalPrice += carts[i].goods_price * carts[i].num;
-    //     totalNum += carts[i].num;
-    //   }
-    // }
+    // 遍历数组，如果有一项的checked都是假的，那么全选就重新赋值成假的，否则就时两个都是真的，不需要修改状态
     carts.forEach(v=>{
       if (!v.checked) {
         checkAll = false;
@@ -88,9 +81,29 @@ Page({
     this.getCarts(carts);
   },
 
-
-
-
+// 点击减号减1，点击加号＋1
+  handleOperation: async function(e){
+    let {goods_id, operation} = e.currentTarget.dataset;
+    let carts = wx.getStorageSync('carts');
+    // 遍历数组，找到与goods_id一致的商品，明确用户点击的是哪一个商品
+    // 如果operation=-1,说明点击的是减号，在对应的商品中减-1
+    // 当点击-1 最后要等于0的时候，给用户提示，是否真的要删除这个商品了
+    let index = carts.findIndex(v=>v.goods_id==goods_id);
+    // console.log(operation)
+    if (operation == -1 && carts[index].num-1 == 0){
+      const res = await showModal({
+        content: '确定要删除人家吗，亲'
+      })
+      if(res.confirm){
+        carts.splice(index,1)
+      }
+    } 
+     else{
+      carts[index].num +=operation 
+    }
+    this.getCarts(carts);
+    wx.setStorageSync('goodsTotal', carts.length)
+  },
 
 
 

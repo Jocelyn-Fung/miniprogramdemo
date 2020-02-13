@@ -15,9 +15,17 @@
           <text>{{item.goods_price}}</text>
         </view>
         <view class="mount">
-          <image src="https://ae01.alicdn.com/kf/Ha2263d350e844f04ab8a0deedbb4f11de.png"></image>
+          <image src="https://ae01.alicdn.com/kf/Ha2263d350e844f04ab8a0deedbb4f11de.png" 
+          bindtap="handleOperation" 
+          data-operation="{{-1}}"
+          data-goods_id="{{item.goods_id}}"
+          ></image>
           <text>{{item.num}}</text>
-          <image src="https://ae01.alicdn.com/kf/H343f3d3a91414918986b019fb7649a3fb.png"></image>
+          <image src="https://ae01.alicdn.com/kf/H343f3d3a91414918986b019fb7649a3fb.png" 
+          bindtap="handleOperation"
+           data-operation="{{1}}"
+          data-goods_id="{{item.goods_id}}"
+          ></image>
         </view>
       </view>
     </view>
@@ -43,10 +51,14 @@
       <view class="total">
         合计：
         <text>
-          <text class="rmb">￥</text> 3999
+          <text class="rmb">￥</text> {{totalPrice||0}}
         </text>
       </view>
     </view>
-    <view class="check">去结算(11)</view>
+    <!-- 点击跳转到支付页面 -->
+    <navigator url="/pages/pay/index" open-type="navigate">
+    <view class="check" wx:if="{{totalNum}}" >去结算({{totalNum}})</view>
+    </navigator>
+    <view class="check_disable" wx:if="{{!totalNum}}">去结算(0)</view>
   </view>
 </view>
