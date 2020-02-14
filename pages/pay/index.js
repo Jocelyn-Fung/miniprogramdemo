@@ -5,18 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-    carts:[],
-    address:{}
+    chosenGoods:[],
+    address:{},
+    totalNum:0,
+    totalPrice:0
   },
 
   // 获取页面数据
   getPay: function(){
     let carts = wx.getStorageSync('carts')||[];
     // console.log(carts)
+    let totalNum=0;
+    let totalPrice=0;
+    let chosenGoods =[];
+    carts.forEach(v=>{
+      if(v.checked){
+        chosenGoods.push(v)
+        totalNum += v.num
+        totalPrice +=v.goods_price*v.num
+      }
+    })
+    // console.log(chosenGoods, totalNum, totalPrice)
     let address = wx.getStorageSync('address')||{};
     this.setData({
-      carts,
-      address
+      chosenGoods,
+      address,
+      totalNum,
+      totalPrice
     })
   },
   // 当没有地址的时候，点击选择地址的事件处理函数
@@ -42,6 +57,11 @@ Page({
     }catch(e){
       console.log(e)
     }
+  },
+
+  // 点击去结算
+  handlePay:function(){
+    console.log('122')
   },
   /**
    * 生命周期函数--监听页面加载

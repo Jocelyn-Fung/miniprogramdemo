@@ -11,7 +11,7 @@
   <!-- 已选商品列表 -->
   <view class="ChosenList">
     <view class="chosenGoods">已选商品</view>
-    <view class="list" wx:for="{{carts}}" wx:key="index">
+    <view class="list" wx:for="{{chosenGoods}}" wx:key="index">
       <image src="{{item.goods_small_logo}}"></image>
       <view class="info">
         <view class="title">{{item.goods_name}}</view>
@@ -21,5 +21,21 @@
         </view>
       </view>
     </view>
+  </view>
+  <!-- 结算部分 -->
+  <view class="pay" >
+    <view class="left">
+      <view class="total">
+        合计：
+        <text>
+          <text class="rmb">￥</text> {{totalPrice}}
+        </text>
+      </view>
+    </view>
+    <!-- 点击跳转到支付页面 -->
+    <!-- <navigator url="/pages/pay/index" open-type="navigate"> -->
+    <view class="check" wx:if="{{totalNum && address.all}}" bindtap="handlePay">去结算({{totalNum}})</view>
+    <!-- </navigator> -->
+    <view class="check_disable" wx:else>去结算(0)</view>
   </view>
 </view>

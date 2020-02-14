@@ -1,5 +1,7 @@
-.pay {
+page {
   background-color: #f9f9f9;
+}
+.pay {
   padding: 21rpx 0 35rpx 0;
   display: flex;
   justify-content: center;
@@ -94,4 +96,65 @@
 }
 .pay .ChosenList .list .info .priceAndNum .num {
   margin-right: 15rpx;
+}
+.pay .pay {
+  height: 83rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 27rpx;
+}
+.pay .pay .left {
+  display: flex;
+  align-items: center;
+}
+.pay .pay .left .iconfont.icon-xuanzhong {
+  height: 35rpx;
+  color: var(--themeColor);
+}
+.pay .pay .left .iconfont.icon-xuanzhong text {
+  font-size: 21rpx;
+  color: #8A8A8A;
+  margin: 0 30rpx;
+}
+.pay .pay .left .selectAll {
+  font-size: 21rpx;
+  color: #8A8A8A;
+  margin: 0 20rpx;
+}
+.pay .pay .left .total {
+  font-size: 26rpx;
+  color: #292929;
+  margin: 0 17rpx;
+}
+.pay .pay .left .total text {
+  font-size: 28rpx;
+  color: var(--themeColor);
+}
+.pay .pay .left .total text .rmb {
+  font-size: 20rpx;
+}
+.pay .pay .check {
+  background-color: var(--themeColor);
+  color: white;
+  line-height: 52rpx;
+  height: 52rpx;
+  width: 150rpx;
+  text-align: center;
+  font-size: 21rpx;
+  border-radius: 25rpx;
+}
+.pay .pay .check_disable {
+  background-color: #dddddd;
+  color: white;
+  line-height: 52rpx;
+  height: 52rpx;
+  width: 150rpx;
+  text-align: center;
+  font-size: 21rpx;
+  border-radius: 25rpx;
 }

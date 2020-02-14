@@ -1,5 +1,7 @@
-.pay {
+page{
     background-color: #f9f9f9;
+}
+.pay {
     // background-color: pink;
     padding: 21rpx 0 35rpx 0;
     display: flex;
@@ -109,4 +111,63 @@
             }
         }
     }
+
+    .pay {
+        height: 83rpx;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 27rpx;
+
+        .left {
+            display: flex;
+            align-items: center;
+                text {
+                    font-size: 21rpx;
+                    color: #8A8A8A;
+                    margin: 0 30rpx;
+                }
+            }
+            .total {
+                font-size: 26rpx;
+                color: #292929;
+                margin: 0 17rpx;
+
+                text {
+                    font-size: 28rpx;
+                    color: var(--themeColor);
+
+                    .rmb {
+                        font-size: 20rpx;
+                    }
+                }
+            }
+        }
+
+        .check {
+            background-color: var(--themeColor);
+            color: white;
+            line-height: 52rpx;
+            height: 52rpx;
+            width: 150rpx;
+            text-align: center;
+            font-size: 21rpx;
+            border-radius: 25rpx;
+        }
+        .check_disable{
+            background-color: #dddddd;
+            color: white;
+            line-height: 52rpx;
+            height: 52rpx;
+            width: 150rpx;
+            text-align: center;
+            font-size: 21rpx;
+            border-radius: 25rpx;
+        }
+    }
+   
 }
