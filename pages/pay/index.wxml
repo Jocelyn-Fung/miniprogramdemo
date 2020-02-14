@@ -25,17 +25,11 @@
   <!-- 结算部分 -->
   <view class="pay" >
     <view class="left">
-      <view class="total">
-        合计：
-        <text>
-          <text class="rmb">￥</text> {{totalPrice}}
-        </text>
+      <view class="total"> 合计：<text><text class="rmb">￥</text>{{totalPrice}}</text>
       </view>
     </view>
     <!-- 点击跳转到支付页面 -->
-    <!-- <navigator url="/pages/pay/index" open-type="navigate"> -->
     <view class="check" wx:if="{{totalNum && address.all}}" bindtap="handlePay">去结算({{totalNum}})</view>
-    <!-- </navigator> -->
     <view class="check_disable" wx:else>去结算(0)</view>
   </view>
 </view>

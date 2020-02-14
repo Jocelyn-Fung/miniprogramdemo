@@ -112,33 +112,23 @@ page {
   display: flex;
   align-items: center;
 }
-.pay .pay .left .iconfont.icon-xuanzhong {
-  height: 35rpx;
-  color: var(--themeColor);
-}
-.pay .pay .left .iconfont.icon-xuanzhong text {
+.pay .pay .left text {
   font-size: 21rpx;
   color: #8A8A8A;
-  margin: 0 30rpx;
 }
-.pay .pay .left .selectAll {
-  font-size: 21rpx;
-  color: #8A8A8A;
-  margin: 0 20rpx;
-}
-.pay .pay .left .total {
+.pay .pay .total {
   font-size: 26rpx;
   color: #292929;
   margin: 0 17rpx;
 }
-.pay .pay .left .total text {
+.pay .pay .total text {
   font-size: 28rpx;
   color: var(--themeColor);
 }
-.pay .pay .left .total text .rmb {
+.pay .pay .total text .rmb {
   font-size: 20rpx;
 }
-.pay .pay .check {
+.pay .check {
   background-color: var(--themeColor);
   color: white;
   line-height: 52rpx;
@@ -148,7 +138,7 @@ page {
   font-size: 21rpx;
   border-radius: 25rpx;
 }
-.pay .pay .check_disable {
+.pay .check_disable {
   background-color: #dddddd;
   color: white;
   line-height: 52rpx;
@@ -157,4 +147,12 @@ page {
   text-align: center;
   font-size: 21rpx;
   border-radius: 25rpx;
+}
+.pay button {
+  height: 52rpx;
+  width: 150rpx;
+  position: absolute;
+  bottom: 15rpx;
+  right: 27rpx;
+  opacity: 0;
 }

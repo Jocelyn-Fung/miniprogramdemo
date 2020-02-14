@@ -1,4 +1,5 @@
-import { getSetting, openSetting, chooseAddress} from '../../utils/async.js'
+import { getSetting, openSetting, chooseAddress} from '../../utils/async.js';
+import {request} from '../../request/request.js';
 Page({
 
   /**
@@ -8,13 +9,13 @@ Page({
     chosenGoods:[],
     address:{},
     totalNum:0,
-    totalPrice:0
+    totalPrice:0,
+    // userInfo:{ }, //用户的信息，用于调用接口获取token
   },
 
   // 获取页面数据
   getPay: function(){
     let carts = wx.getStorageSync('carts')||[];
-    // console.log(carts)
     let totalNum=0;
     let totalPrice=0;
     let chosenGoods =[];
@@ -61,7 +62,18 @@ Page({
 
   // 点击去结算
   handlePay:function(){
-    console.log('122')
+    globalData
+    // let code = wx.getStorageSync('code');
+    // let userInfo = wx.getStorageSync('userInfo');
+    // let loginParams =[code, userInfo]
+    // wx.request({
+    //   url: 'https://api.zbztb.cn/api/public/v1/users/wxlogin',
+    //   method:'POST',
+    //   data: loginParams,
+    //   success: res=>{
+    //     console.log(res)
+    //   }
+    // })
   },
   /**
    * 生命周期函数--监听页面加载
