@@ -1,2 +1,24 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<view class="checkOrder">
+  <!-- tabs子组件 -->
+  <Tabs tabs="{{tabs}}" bind:handleIndexChange="handleIndexChange"/>
+  <!-- 订单列表 -->
+  <view wx:if="{{tabs[0].index===tab}}" class="list">
+    <view class="orderList" wx:for="{{orderList}}" wx:key="index">
+      <view>
+        <text>订单编号</text>
+        <text class="order_number">{{item.order_number}}</text>
+      </view>
+      <view>
+        <text>订单金额</text>
+        <text class="order_price">￥{{item.order_price}}</text>
+      </view>
+      <view>
+        <text>订单日期</text>
+        <text class="order_date">{{item.create_time}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{tabs[1].index===tab}}">2</view>
+  <view wx:if="{{tabs[2].index===tab}}">3</view>
+
+</view>
