@@ -9,10 +9,16 @@ export const request = params =>{
     title: '正在加载中...',
     mask:true
   })
-
+  // 解构 获取参数里面是否有header
+  let header ={...params.header};
+  // 判断只要包含了my，那么就设置他的header里面的authorization 的值为token
+  if(params.url.includes("/my")){
+    header["Authorization"]= wx.getStorageSync("token")
+  }
   return new Promise(function(resolve,reject){
     wx.request({
       ...params,
+      header:header,  //添加header
       url: BASE_URL + params.url,
       success:res=>{
         resolve(res.data.message)

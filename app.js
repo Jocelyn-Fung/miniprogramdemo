@@ -22,7 +22,7 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               // this.globalData.userInfo = res.userInfo
-              this.globalData.userInfo = res
+              // this.globalData.userInfo = res
               // let { encryptedData, rawData, iv, signature} =res
               // let userInfo = res
               // wx.setStorageSync('userInfo', userInfo)
@@ -38,6 +38,6 @@ App({
     })
   },
   globalData: {
-    userInfo:{}
+    userInfo:null
   }
 })
