@@ -13,7 +13,7 @@ Page({
       },
       {
         index: 1,
-        value: "性问题",
+        value: "性能问题",
         isSelect: false
       },
       {
@@ -97,6 +97,18 @@ Page({
       this.setData({
         types
       })
+  },
+  // 长摁删除图片
+  handleCancel: function(e){
+    let index = e.currentTarget.dataset.index
+    // console.log(index)
+    // let {imgsArray} = this.data
+    let {imgsArray}= this.data
+    // console.log(imgsArray)
+    imgsArray.splice(index, 1)
+    this.setData({
+      imgsArray
+    })
   },
   /**
    * 生命周期函数--监听页面加载

@@ -16,8 +16,8 @@
       <view class="imgs" bindtap="handleUploadImgs">
         <text>+</text>
       </view>
-      <image wx:for="{{imgsArray}}" wx:key="index" src="{{item.path}}">
-        <icon type="clear" size="23" color="red" data-index="{{index}}" bindtap="handleRemoveImage"></icon>
+      <image wx:for="{{imgsArray}}" wx:key="index" src="{{item.path}}" bindlongtap="handleCancel" data-index="{{index}}">
+        <!-- <icon type="clear" size="23" color="red" data-index="{{index}}" bindtap="handleRemoveImage"></icon> -->
       </image>
 
     </view>
