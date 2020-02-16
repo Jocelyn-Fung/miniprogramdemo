@@ -45,7 +45,7 @@
         "selectedIconPath": "assets/icons/cart-o.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/user/index",
         "text": "我的",
         "iconPath": "assets/icons/my.png",
         "selectedIconPath": "assets/icons/my-o.png"

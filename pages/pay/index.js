@@ -71,7 +71,7 @@ Page({
   handlePay: async function() {
     try {
       let token = wx.getStorageSync('token');
-      // 判断如果没有授权拿到token的话，就先跳转页面
+      // 判断如果没有授权拿到token的话，就先跳转页面auth去授权
       if (!token) {
         wx.navigateTo({
           url: '/pages/auth/index',

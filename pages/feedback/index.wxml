@@ -1,2 +1,27 @@
-<!--pages/feedback/index.wxml-->
-<text>pages/feedback/index.wxml</text>
+<view class="feedback">
+  <!-- 问题类型 -->
+  <view class="proType">
+    <view class="types">选择问题类型</view>
+    <view class="typesList">
+      <view wx:for="{{types}}" wx:key="index" class="{{item.isSelect? 'active':''}}" bindtap="handlePro" data-index="{{item.index}}">{{item.value}}</view>
+    </view>
+  </view>
+  <!-- 问题描述 -->
+  <textarea class="proDesc" placeholder="请描述一下您的问题">
+  </textarea>
+  <!-- 上传图片 -->
+  <view class="uploadImgs">
+    <view class="title">上传图片（{{upload_img_count}}/{{imgsArray.length}}）</view>
+    <view class="handleImgs">
+      <view class="imgs" bindtap="handleUploadImgs">
+        <text>+</text>
+      </view>
+      <image wx:for="{{imgsArray}}" wx:key="index" src="{{item.path}}">
+        <icon type="clear" size="23" color="red" data-index="{{index}}" bindtap="handleRemoveImage"></icon>
+      </image>
+
+    </view>
+  </view>
+  <!-- 提交 -->
+  <view class="submit" bindtap="handleSubmit">提交</view>
+</view>

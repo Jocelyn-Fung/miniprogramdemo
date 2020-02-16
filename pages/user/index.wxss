@@ -1,1 +1,92 @@
-/* pages/user/index.wxss */
+.mine {
+  background-color: #f8f8f8;
+}
+.mine .avatar {
+  height: 329rpx;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+.mine .avatar .my_avatar_bgImage {
+  height: 100%;
+  width: 100%;
+  filter: blur(20rpx);
+}
+.mine .avatar .my_avatar {
+  height: 191rpx;
+  width: 191rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 70rpx;
+  left: 277rpx;
+}
+.mine .avatar text {
+  position: absolute;
+  bottom: 16rpx;
+  left: 240rpx;
+}
+.mine .toLogin {
+  background-color: #fff;
+  height: 329rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mine .toLogin button {
+  background-color: #fff;
+  border: 1rpx solid var(--themeColor);
+  font-size: 35rpx;
+  font-weight: 600;
+  color: var(--themeColor);
+  height: 95rpx;
+  line-height: 95rpx;
+}
+.mine .tools {
+  display: flex;
+  background-color: #fff;
+  margin: 20rpx 0;
+}
+.mine .tools .tools_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 144rpx;
+  font-size: 26rpx;
+}
+.mine .tools .tools_item .iconfont {
+  font-size: 60rpx;
+}
+.mine .minigramInfo {
+  background-color: #fff;
+}
+.mine .minigramInfo .minigram_item {
+  border-bottom: 1rpx solid #d3d3d3;
+  height: 101rpx;
+  width: 726rpx;
+  padding: 0 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.mine .minigramInfo .minigram_item .iconfont {
+  display: flex;
+  align-items: center;
+  font-size: 50rpx;
+  color: #434343;
+}
+.mine .minigramInfo .minigram_item .iconfont text {
+  padding-left: 15rpx;
+}
+.mine .minigramInfo .minigram_item text,
+.mine .minigramInfo .minigram_item .tel,
+.mine .minigramInfo .minigram_item .version {
+  font-size: 26rpx;
+  color: #434343;
+}
+.mine .active {
+  color: var(--themeColor);
+}

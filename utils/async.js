@@ -92,6 +92,7 @@ export const showToast = params => {
   return new Promise(function (resolve, reject) {
     wx.showToast({
       title: params.title,
+      icon:'success',
       success: (res) => {
         resolve(res);
       },

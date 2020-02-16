@@ -1,0 +1,102 @@
+.mine {
+    background-color: #f8f8f8;
+
+    .avatar {
+        height: 329rpx;
+        width: 100%;
+        position: relative;
+        background-color: #fff;
+
+        .my_avatar_bgImage {
+            height: 100%;
+            width: 100%;
+            filter: blur(20rpx);
+
+        }
+
+        .my_avatar {
+            height: 191rpx;
+            width: 191rpx;
+            border-radius: 50%;
+            position: absolute;
+            top: 70rpx;
+            left: 277rpx;
+        }
+
+        text {
+            position: absolute;
+            bottom: 16rpx;
+            left: 240rpx;
+        }
+    }
+
+    .toLogin {
+        background-color: #fff;
+        height: 329rpx;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            background-color: #fff;
+            border: 1rpx solid var(--themeColor);
+            font-size: 35rpx;
+            font-weight: 600;
+            color: var(--themeColor);
+            height: 95rpx;
+            line-height: 95rpx;
+        }
+    }
+
+    .tools {
+        display: flex;
+        background-color: #fff;
+        margin: 20rpx 0;
+
+        .tools_item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            height: 144rpx;
+            font-size: 26rpx;
+
+            .iconfont {
+                font-size: 60rpx;
+            }
+        }
+    }
+
+    // 客服服务等信息
+    .minigramInfo {
+        background-color: #fff;
+    .minigram_item {
+        border-bottom: 1rpx solid #d3d3d3;
+        height:101rpx;
+        width:726rpx;
+        padding: 0 10rpx;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        margin: 0 auto;
+        .iconfont {
+            display: flex;
+            align-items: center;
+            font-size: 50rpx;
+            color:#434343;
+            text{
+                padding-left:15rpx;
+            }
+        }
+            text, .tel, .version{
+                font-size: 26rpx;
+                color:#434343;
+            }
+        }
+    }
+    .active{
+        color:var(--themeColor);
+    }
+}

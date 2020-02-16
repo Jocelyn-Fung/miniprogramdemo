@@ -1,2 +1,45 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="mine">
+  <!-- 上面头像部分 -->
+  <view class="toLogin" wx:if="{{!userInfo.avatarUrl}}">
+    <button size="default" open-type="getUserInfo" bindgetuserinfo="handleUserInfo">点击登录</button>
+  </view>
+  <view class="avatar" wx:else>
+    <image class="my_avatar_bgImage" src="{{userInfo.avatarUrl}}"></image>
+    <view class="avatar_image">
+      <image class="my_avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit" />
+      <text>{{userInfo.nickName}}</text>
+    </view>
+  </view>
+
+  <!-- 中间工具栏 -->
+  <view class="tools">
+  <view
+  class="tools_item {{index===tab? 'active':''}}" 
+  wx:for="{{tools}}" wx:key="index" 
+  bindtap="handleClick" 
+  data-index="{{index}}"
+  open-type="navigate"
+  >
+      <text class="iconfont {{item.icon}}"></text>{{item.content}}</view>
+  </view>
+  <!-- 下面联系客服，意见反馈，当前版本 -->
+  <view class="minigramInfo">
+    <view class="minigram_item">
+      <view class="iconfont icon-lianxikefu">
+        <text>联系客服</text>
+      </view>
+      <view class="tel">400-618-4000</view>
+    </view>
+    <navigator class="minigram_item" url="/pages/feedback/index">
+      <view class="iconfont icon-yijianfankui">
+        <text>意见反馈</text>
+      </view>
+    </navigator>
+    <view class="minigram_item">
+      <view class="iconfont icon-ziyuan">
+        <text>当前版本</text>
+      </view>
+       <view class="version">v4.1.1</view>
+    </view>
+  </view>
+</view>
